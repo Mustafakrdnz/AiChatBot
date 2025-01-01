@@ -36,25 +36,26 @@ const ChatBox = () => {
 
     return (
         <div className="chat-box">
-            <div className="messages">
-                {messages.map((message) => (
-                    <ChatMessage
-                        key={message.id}
-                        content={message.content}
-                        sender={message.sender}
-                    />
-                ))}
-            </div>
-            <form onSubmit={handleSubmit} className="input-form">
-                <input
-                    type="text"
-                    value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
-                    placeholder="Write your message..."
+        <div className="messages">
+            {messages.map((message) => (
+                <ChatMessage
+                    key={message.id}
+                    content={message.content}
+                    sender={message.sender}
+                    timestamp={message.timestamp} // Zaman bilgisini ekliyoruz
                 />
-                <button type="submit">Send</button>
-            </form>
+            ))}
         </div>
+        <form onSubmit={handleSubmit} className="input-form">
+            <input
+                type="text"
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+                placeholder="Write your message..."
+            />
+            <button type="submit">Send</button>
+        </form>
+    </div>
     );
 };
 

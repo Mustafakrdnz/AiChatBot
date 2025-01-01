@@ -21,6 +21,8 @@
   padding: 10px;
   border-radius: 8px;
   max-width: 70%;
+  display: flex;
+  flex-direction: column; /* Zaman bilgisini aşağıda göstermek için */
 }
 
 .user-message {
@@ -32,6 +34,30 @@
 .bot-message {
   background-color: #e9ecef;
   color: black;
+}
+
+.message-content {
+  font-size: 16px;
+  color: inherit; /* Mesajın rengini türüne göre ayarla */
+}
+
+/* Zaman bilgisi */
+.message-timestamp {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Kullanıcı mesajı için zaman */
+.user-message .message-timestamp {
+  align-self: flex-end; /* Sağ alt */
+  text-align: right;
+}
+
+/* Bot mesajı için zaman */
+.bot-message .message-timestamp {
+  align-self: flex-start; /* Sol alt */
+  text-align: left;
 }
 
 .input-form {
@@ -59,4 +85,4 @@ button {
 
 button:hover {
   background-color: #0056b3;
-} 
+}
